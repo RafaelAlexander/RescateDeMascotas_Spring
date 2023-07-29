@@ -9,6 +9,9 @@ import java.util.List;
 @AllArgsConstructor
 public class Mascota {
     @Getter
+    @Setter
+    private String Chapita;
+    @Getter
     private TipoMascota tipoMascota;
     @Getter
     private String nombre;
