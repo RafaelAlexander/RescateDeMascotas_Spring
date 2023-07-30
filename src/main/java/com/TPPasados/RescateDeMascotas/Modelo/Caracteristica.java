@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.util.List;
 
 @AllArgsConstructor
-public class Caracteristicas {
+public class Caracteristica {
     @Getter
     @Setter
     private String nombre;
@@ -21,8 +21,8 @@ public class Caracteristicas {
         }
         if (this.opciones.contains(opcion)) {
             mascota.agregarCaracteristicaPersonalizada(new CaracteristicaPersonalizada(
-                                    this.nombre,
-                                    opcion));
+                    this,
+                    opcion));
         }
         throw new OpcionCaracteristicaNoValidaException("La opción "
                 + opcion +

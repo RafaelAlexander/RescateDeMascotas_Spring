@@ -1,27 +1,28 @@
 package com.TPPasados.RescateDeMascotas.Modelo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NonNull;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@AllArgsConstructor
-public class MascotaPerdida {
-    @Getter
-    @Setter
+@Data
+@Entity
+@Table(name = "MascotaEncontrada")
+public class MascotaEncontrada {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @NonNull
     private String Chapita;
-    @Getter
+    @NonNull
     private List<String> fotos;
-    @Getter
-    @Setter
+    @NonNull
     private String descActual;
-    @Getter
     private double latitud;
-    @Getter
     private double longitud;
-    @Getter
+    @NonNull
     private LocalDate fechaEncontrada;
 
     public boolean fuisteEncontradaDespues(LocalDate fecha){

@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class CaracteristicaPersonalizada {
     @Getter
-    private String nombre;
+    private Caracteristica caracteristica;
     @Getter
     private String valor;
 }

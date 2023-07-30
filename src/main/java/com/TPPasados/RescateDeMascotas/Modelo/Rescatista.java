@@ -32,7 +32,7 @@ public class Rescatista {
     private List<Contacto> contatos;
     @Getter
     @Setter
-    private MascotaPerdida mascotaPerdida;
+    private MascotaEncontrada mascotaEncontrada;
 
 
 }
