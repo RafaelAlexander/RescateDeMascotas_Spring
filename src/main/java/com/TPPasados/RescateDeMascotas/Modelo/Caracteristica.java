@@ -15,7 +15,7 @@ public class Caracteristica {
     @Getter
     private List<String> opciones;
 
-    public void crearCaracteriticaPersonlizada(String opcion, Mascota mascota) {
+    /*public void crearCaracteriticaPersonlizada(String opcion, Mascota mascota) {
         if (opcion.isEmpty()) {
             return;
         }
@@ -28,5 +28,5 @@ public class Caracteristica {
                 + opcion +
                 "no es valida para la caracteristica "
                 + this.nombre);
-    }
+    }*/
 }

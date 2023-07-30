@@ -11,17 +11,21 @@ import java.util.List;
 @Entity
 @Table(name = "MascotaEncontrada")
 public class MascotaEncontrada {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NonNull
     private String Chapita;
     @NonNull
+    @ElementCollection
     private List<String> fotos;
     @NonNull
     private String descActual;
-    private double latitud;
-    private double longitud;
+    @NonNull
+    private Double latitud;
+    @NonNull
+    private Double longitud;
     @NonNull
     private LocalDate fechaEncontrada;
 

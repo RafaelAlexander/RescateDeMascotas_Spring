@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RepositorioMascotasEncontradas extends JpaRepository<MascotaEncontrada, Long> {
+
     //private List<MascotaPerdida> mascotaPerdidas = new ArrayList<>();
 
     /*public void agregarMascotaPerdida(MascotaPerdida mascotaPerdida) {
