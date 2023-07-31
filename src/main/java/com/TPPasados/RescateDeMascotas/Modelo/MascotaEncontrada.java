@@ -1,6 +1,7 @@
 package com.TPPasados.RescateDeMascotas.Modelo;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
@@ -8,15 +9,16 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Data
+@NoArgsConstructor
 @Entity
-@Table(name = "MascotaEncontrada")
+@Table(name = "mascotaencontrada")
 public class MascotaEncontrada {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NonNull
-    private String Chapita;
+    private String chapita;
     @NonNull
     @ElementCollection
     private List<String> fotos;

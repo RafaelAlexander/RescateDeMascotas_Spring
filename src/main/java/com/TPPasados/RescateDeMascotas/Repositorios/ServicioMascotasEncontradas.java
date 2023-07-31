@@ -4,6 +4,9 @@ import com.TPPasados.RescateDeMascotas.Modelo.MascotaEncontrada;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Service
 public class ServicioMascotasEncontradas {
 
@@ -15,6 +18,12 @@ public class ServicioMascotasEncontradas {
     }
 
     public void agregar(MascotaEncontrada mascotaEncontrada) {
-        repo.save(mascotaEncontrada);
+        this.repo.save(mascotaEncontrada);
+    }
+
+    public List<MascotaEncontrada> encontradas10Dias() {
+        LocalDate hoy = LocalDate.now();
+        LocalDate hace10Dias = hoy.minusDays(10);
+        return this.repo.findByFechaEncontradaBetween(hace10Dias, hoy);
     }
 }
