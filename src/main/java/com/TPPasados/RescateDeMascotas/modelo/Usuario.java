@@ -1,4 +1,4 @@
-package com.TPPasados.RescateDeMascotas.Modelo;
+package com.TPPasados.RescateDeMascotas.modelo;
 
 public class Usuario {
     private String nombre;

@@ -1,4 +1,4 @@
-package com.TPPasados.RescateDeMascotas.Modelo;
+package com.TPPasados.RescateDeMascotas.modelo;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -6,7 +6,6 @@ import lombok.NonNull;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -20,8 +19,7 @@ public class MascotaEncontrada {
     @NonNull
     private String chapita;
     @NonNull
-    @ElementCollection
-    private List<String> fotos;
+    private String fotos;
     @NonNull
     private String descActual;
     @NonNull
@@ -31,7 +29,7 @@ public class MascotaEncontrada {
     @NonNull
     private LocalDate fechaEncontrada;
 
-    public boolean fuisteEncontradaDespues(LocalDate fecha){
+    public boolean fuisteEncontradaDespues(LocalDate fecha) {
         return this.fechaEncontrada.isAfter(fecha);
     }
 }

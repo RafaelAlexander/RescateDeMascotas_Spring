@@ -1,13 +1,12 @@
-package com.TPPasados.RescateDeMascotas.Modelo;
+package com.TPPasados.RescateDeMascotas.modelo;
 
-import com.TPPasados.RescateDeMascotas.Exception.EsPalabraProhibidaException;
+import com.TPPasados.RescateDeMascotas.exceptions.EsPalabraProhibidaException;
 import com.TPPasados.RescateDeMascotas.RescateDeMascotasApplication;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PalabraProhibida implements Verificacion {

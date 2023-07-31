@@ -1,4 +1,4 @@
-package com.TPPasados.RescateDeMascotas.Exception;
+package com.TPPasados.RescateDeMascotas.exceptions;
 
 public class OpcionCaracteristicaNoValidaException extends RuntimeException {
     public OpcionCaracteristicaNoValidaException(String msg) {

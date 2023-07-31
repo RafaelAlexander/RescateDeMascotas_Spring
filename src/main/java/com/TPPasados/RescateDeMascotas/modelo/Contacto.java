@@ -1,13 +1,11 @@
-package com.TPPasados.RescateDeMascotas.Modelo;
+package com.TPPasados.RescateDeMascotas.modelo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @AllArgsConstructor
-public class Duenio {
+public class Contacto {
     @Getter
     @Setter
     private String nombre;
@@ -16,13 +14,8 @@ public class Duenio {
     private String apellido;
     @Getter
     @Setter
-    private TipoDocumento tipoDocumento;
+    private String telefono;
     @Getter
     @Setter
-    private String nroDocumento;
-    @Getter
-    @Setter
-    private List<Contacto> contactos;
-
-
+    private String email;
 }

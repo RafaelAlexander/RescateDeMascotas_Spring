@@ -1,6 +1,6 @@
-package com.TPPasados.RescateDeMascotas.Modelo;
+package com.TPPasados.RescateDeMascotas.modelo;
 
-import com.TPPasados.RescateDeMascotas.Exception.PalabraNoCumpleLongitudException;
+import com.TPPasados.RescateDeMascotas.exceptions.PalabraNoCumpleLongitudException;
 
 public class LongitudRequerida implements Verificacion {
     @Override

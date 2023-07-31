@@ -1,6 +1,6 @@
-package com.TPPasados.RescateDeMascotas.Repositorios;
+package com.TPPasados.RescateDeMascotas.repositorios;
 
-import com.TPPasados.RescateDeMascotas.Modelo.MascotaEncontrada;
+import com.TPPasados.RescateDeMascotas.modelo.MascotaEncontrada;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

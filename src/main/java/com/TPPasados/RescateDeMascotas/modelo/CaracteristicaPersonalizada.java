@@ -1,4 +1,4 @@
-package com.TPPasados.RescateDeMascotas.Modelo;
+package com.TPPasados.RescateDeMascotas.modelo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
