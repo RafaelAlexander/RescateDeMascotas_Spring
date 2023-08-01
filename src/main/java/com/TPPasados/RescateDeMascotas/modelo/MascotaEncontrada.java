@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class MascotaEncontrada {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NonNull
     private String chapita;
@@ -28,6 +28,20 @@ public class MascotaEncontrada {
     private Double longitud;
     @NonNull
     private LocalDate fechaEncontrada;
+
+    public MascotaEncontrada(String chapita,
+                             String fotos,
+                             String descActual,
+                             Double latitud,
+                             Double longitud,
+                             LocalDate fechaEncontrada) {
+        this.chapita = chapita;
+        this.fotos = fotos;
+        this.descActual = descActual;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.fechaEncontrada = fechaEncontrada;
+    }
 
     public boolean fuisteEncontradaDespues(LocalDate fecha) {
         return this.fechaEncontrada.isAfter(fecha);
