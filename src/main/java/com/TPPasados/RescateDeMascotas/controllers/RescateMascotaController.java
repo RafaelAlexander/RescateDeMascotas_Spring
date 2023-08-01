@@ -10,18 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "mascotasRescatadas")
+@RequestMapping(path = "mascotas-rescatadas")
 public class RescateMascotaController {
     @Autowired
     private ServicioMascotasEncontradas repo;
 
-    @GetMapping("/diezdias")
+    /*@GetMapping("/diez-dias")
     public List<MascotaEncontrada> obtenerEncontradas10Dias(){
         return repo.encontradas10Dias();
-    }
+    }*/
 
     @GetMapping()
     public List<MascotaEncontrada> obtenerMascotasEncontradas() {
         return repo.obtenerTodasMascotasEncontradas();
     }
+
+
 }
