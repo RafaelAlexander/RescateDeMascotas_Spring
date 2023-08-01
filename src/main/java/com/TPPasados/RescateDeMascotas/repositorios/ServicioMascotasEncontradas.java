@@ -10,12 +10,8 @@ import java.util.List;
 @Service
 public class ServicioMascotasEncontradas {
 
-    private final RepositorioMascotasEncontradas repo;
-
     @Autowired
-    public ServicioMascotasEncontradas(RepositorioMascotasEncontradas repo) {
-        this.repo = repo;
-    }
+    private RepositorioMascotasEncontradas repo;
 
     public void agregar(MascotaEncontrada mascotaEncontrada) {
         this.repo.save(mascotaEncontrada);

@@ -12,14 +12,15 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "mascotasRescatadas")
 public class RescateMascotaController {
-    private final ServicioMascotasEncontradas repo;
-
     @Autowired
-    public RescateMascotaController(ServicioMascotasEncontradas repo) {
-        this.repo = repo;
+    private ServicioMascotasEncontradas repo;
+
+    @GetMapping("/diezdias")
+    public List<MascotaEncontrada> obtenerEncontradas10Dias(){
+        return repo.encontradas10Dias();
     }
 
-    @GetMapping
+    @GetMapping()
     public List<MascotaEncontrada> obtenerMascotasEncontradas() {
         return repo.obtenerTodasMascotasEncontradas();
     }
