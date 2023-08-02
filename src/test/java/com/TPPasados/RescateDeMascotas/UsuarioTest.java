@@ -29,7 +29,7 @@ public class UsuarioTest {
     }
 
     @Test
-    public void crearUsuarioConMenorAOchoTest() throws IOException, URISyntaxException {
+    public void crearUsuarioConMenorAOchoTest() {
         Exception exception = Assertions.assertThrows(ContraseniaInvalidaException.class,
                 () -> {
                     new Usuario("TEST", "68LxVZ%", RolUsuario.DUENIO, reglas);
@@ -68,8 +68,9 @@ public class UsuarioTest {
         Assertions.assertEquals(msg, "La contraseña no cumple con las validacion requeridas");
     }
 
-    @Test void crearUsuarioConContraseniaExitosa() throws IOException, URISyntaxException {
-             Usuario usuario = new Usuario("TEST", "68LxVZy3jHG4%", RolUsuario.DUENIO, reglas);
-             Assertions.assertTrue(!usuario.equals(null));
+    @Test
+    public void crearUsuarioConContraseniaExitosa() throws IOException, URISyntaxException {
+        Usuario usuario = new Usuario("TEST", "68LxVZy3jHG4%", RolUsuario.DUENIO, reglas);
+        Assertions.assertTrue(!usuario.equals(null));
     }
 }

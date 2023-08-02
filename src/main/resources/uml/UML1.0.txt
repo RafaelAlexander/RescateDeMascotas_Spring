@@ -1,0 +1,127 @@
+@startuml
+class Duenio{
+-String nombre
+-String apellido
+-TipoDocumento tipoDocumento
+-String nroDocumento
+-List<Contacto> contactos
+-List<Mascota> mascotas
+}
+
+Duenio--->TipoDocumento
+Duenio--->"*"Contacto
+Duenio--->"*"Mascota
+
+enum TipoDocumento{
+DNI
+PASAPORTE
+}
+
+class Contacto{
+-String nombre
+-String apellido
+-String telefono
+-String email
+}
+
+class Mascota{
+-String chapita
+-String nombre
+-TipoMascota tipoMascota
+-String apodo
+-double edadAprox
+-Sexo sexo
+-String descFisica
+-String fotos
+-List<CaracteristicaPerzonalida> caracteristicasPersonalizadas
+}
+
+Mascota-->TipoMascota
+Mascota-->Sexo
+Mascota-->"*"CaracteristicaPerzonalida
+
+enum TipoMascota{
+PERRO
+GATO
+}
+
+enum Sexo{
+MACHO
+HEMBRA
+}
+
+class CaracteristicaPerzonalida{
+-Caracteristica caracteristica
+-String valor
+}
+
+CaracteristicaPerzonalida-->Caracteristica
+
+class Caracteristica{
+-String nombre
+-List<String> opciones
+}
+
+class Rescatista{
+-String nombre
+-String apellido
+-LocalDate fechaNacimiento
+-TipoDocumento tipoDocumento
+-String nroDocumento
+-String direccion
+-List<Contacto> contatos
+-MascotaEncontrada mascotaEncontrada
+}
+
+Rescatista-->TipoDocumento
+Rescatista-->"*"Contacto
+Rescatista-->MascotaEncontrada
+
+class MascotaEncontrada{
+-String chapita
+-String fotos
+-String descActual
+-Double latitud
+-Double longitud
+-LocalDate fechaEncontrada
+}
+
+class ServicioMascotaEncontrada{
+}
+
+ServicioMascotaEncontrada ..> RepositorioMascotaEncontrada
+ServicioMascotaEncontrada ..> MascotaEncontrada
+
+interface RepositorioMascotaEncontrada{
+void agregar(MascotaEncontrada)
+List<MascotaEncontrada> encontradas10Dias()
+List<MascotaEncontrada> obtenerTodasLasMascotasEncontradas()
+}
+
+class Usuario{
+-String nombre
+-String contrasenia
+-RolUsuario rolUsuario
+-List<ReglaValidacion> reglas
+}
+
+Usuario-->RolUsuario
+Usuario-->ReglaValidacion
+
+enum RolUsuario{
+Duenio
+Administrador
+}
+
+interface ReglaValidacion{
+boolean validacion()
+}
+
+ReglaValidacion <|.. CaracteristicasConsecutivas
+ReglaValidacion <|.. DiezKProhibidas
+ReglaValidacion <|.. ValidacionGeneral
+
+class CaracteristicasConsecutivas
+class DiezKProhibidas
+class ValidacionGeneral
+@enduml

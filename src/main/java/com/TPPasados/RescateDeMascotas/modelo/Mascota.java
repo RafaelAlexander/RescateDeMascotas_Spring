@@ -28,7 +28,7 @@ public class Mascota {
     private String descFisica;
     @Getter
     @Setter
-    private List<String> fotos;
+    private String fotos;
     @Getter
     private List<CaracteristicaPersonalizada> caracteristicaPersonalizada;
 
