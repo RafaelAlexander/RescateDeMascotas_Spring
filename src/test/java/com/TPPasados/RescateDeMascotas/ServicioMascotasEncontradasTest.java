@@ -2,7 +2,6 @@ package com.TPPasados.RescateDeMascotas;
 
 import com.TPPasados.RescateDeMascotas.modelo.MascotaEncontrada;
 import com.TPPasados.RescateDeMascotas.repositorios.ServicioMascotasEncontradas;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,7 +16,7 @@ public class ServicioMascotasEncontradasTest {
     private ServicioMascotasEncontradas repo;
 
     @Test
-    public void verificarMascotaEncontradaDentro10Diaz() {
+    public void hayMascotaEncontradaDentro10Diaz() {
         MascotaEncontrada mascotaEncontrada = new MascotaEncontrada("TEST",
                 "TEST",
                 "TEST",
@@ -27,5 +26,18 @@ public class ServicioMascotasEncontradasTest {
         repo.agregar(mascotaEncontrada);
         Boolean hayMascota = repo.encontradas10Dias().size() == 1;
         Assert.isTrue(hayMascota, "No hay mascota");
+    }
+
+    @Test
+    public void noHayMascotaEncontradaDentro10Diaz() {
+        MascotaEncontrada mascotaEncontrada = new MascotaEncontrada("TEST",
+                "TEST",
+                "TEST",
+                1.0,
+                1.0,
+                LocalDate.now().minusDays(20));
+        repo.agregar(mascotaEncontrada);
+        Boolean noHayMascota = repo.encontradas10Dias().size() == 0;
+        Assert.isTrue(noHayMascota, "No hay mascota");
     }
 }

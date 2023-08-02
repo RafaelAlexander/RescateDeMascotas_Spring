@@ -30,13 +30,13 @@ public class Usuario {
 
     public Usuario(String nombre, String contrasenia, RolUsuario rolUsuario, List<ReglaValidacion> reglas) throws IOException, URISyntaxException {
         this.nombre = nombre;
+        this.reglas = reglas;
         setContrasenia(contrasenia);
         this.rolUsuario = rolUsuario;
-        this.reglas = reglas;
     }
 
     public void setContrasenia(String contrasenia) {
-        Boolean cumpleTodo = reglas.stream().allMatch(r -> {
+        boolean cumpleTodo = reglas.stream().allMatch(r -> {
             try {
                 return r.verificar(contrasenia);
             } catch (IOException e) {
@@ -45,7 +45,7 @@ public class Usuario {
                 throw new RuntimeException(e);
             }
         });
-        if (cumpleTodo) {
+        if (!cumpleTodo) {
             throw new ContraseniaInvalidaException("La contraseña no cumple con las validacion requeridas");
         }
         this.contrasenia = contrasenia;
