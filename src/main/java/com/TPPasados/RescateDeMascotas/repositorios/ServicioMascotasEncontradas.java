@@ -1,17 +1,17 @@
 package com.TPPasados.RescateDeMascotas.repositorios;
 
 import com.TPPasados.RescateDeMascotas.modelo.MascotaEncontrada;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ServicioMascotasEncontradas {
 
-    @Autowired
-    private RepositorioMascotasEncontradas repo;
+    private final RepositorioMascotasEncontradas repo;
 
     public void agregar(MascotaEncontrada mascotaEncontrada) {
         this.repo.save(mascotaEncontrada);

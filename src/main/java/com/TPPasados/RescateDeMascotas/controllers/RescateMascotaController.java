@@ -2,7 +2,7 @@ package com.TPPasados.RescateDeMascotas.controllers;
 
 import com.TPPasados.RescateDeMascotas.modelo.MascotaEncontrada;
 import com.TPPasados.RescateDeMascotas.repositorios.ServicioMascotasEncontradas;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,15 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(path = "mascotas-rescatadas")
 public class RescateMascotaController {
-    @Autowired
-    private ServicioMascotasEncontradas repo;
 
-    /*@GetMapping("/diez-dias")
-    public List<MascotaEncontrada> obtenerEncontradas10Dias(){
-        return repo.encontradas10Dias();
-    }*/
+    private final ServicioMascotasEncontradas repo;
 
     @GetMapping()
     public List<MascotaEncontrada> obtenerMascotasEncontradas() {

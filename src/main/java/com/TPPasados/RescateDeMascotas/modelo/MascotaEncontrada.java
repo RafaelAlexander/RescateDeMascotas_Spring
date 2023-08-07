@@ -16,17 +16,11 @@ public class MascotaEncontrada {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NonNull
     private String chapita;
-    @NonNull
     private String fotos;
-    @NonNull
     private String descActual;
-    @NonNull
     private Double latitud;
-    @NonNull
     private Double longitud;
-    @NonNull
     private LocalDate fechaEncontrada;
 
     public MascotaEncontrada(String chapita,
