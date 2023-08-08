@@ -1,7 +1,7 @@
 package com.TPPasados.RescateDeMascotas;
 
 import com.TPPasados.RescateDeMascotas.modelo.MascotaEncontrada;
-import com.TPPasados.RescateDeMascotas.repositorios.ServicioMascotasEncontradas;
+import com.TPPasados.RescateDeMascotas.servicios.ServicioMascotasEncontradas;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,10 +1,12 @@
 package com.TPPasados.RescateDeMascotas.modelo;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
+@NoArgsConstructor
 @Entity
 @Table(name = "contacto")
 public class Contacto {
@@ -15,4 +17,14 @@ public class Contacto {
     private String apellido;
     private String telefono;
     private String email;
+
+    public Contacto(String nombre,
+                    String apellido,
+                    String telefono,
+                    String email) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.email = email;
+    }
 }

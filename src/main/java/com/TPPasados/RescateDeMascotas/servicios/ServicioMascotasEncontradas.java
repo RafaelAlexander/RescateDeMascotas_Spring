@@ -1,6 +1,7 @@
-package com.TPPasados.RescateDeMascotas.repositorios;
+package com.TPPasados.RescateDeMascotas.servicios;
 
 import com.TPPasados.RescateDeMascotas.modelo.MascotaEncontrada;
+import com.TPPasados.RescateDeMascotas.repositorios.RepositorioMascotasEncontradas;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
