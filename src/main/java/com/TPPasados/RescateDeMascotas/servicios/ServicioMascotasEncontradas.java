@@ -1,6 +1,7 @@
 package com.TPPasados.RescateDeMascotas.servicios;
 
 import com.TPPasados.RescateDeMascotas.modelo.MascotaEncontrada;
+import com.TPPasados.RescateDeMascotas.repositorios.RepositorioMascotas;
 import com.TPPasados.RescateDeMascotas.repositorios.RepositorioMascotasEncontradas;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import java.util.List;
 public class ServicioMascotasEncontradas {
 
     private final RepositorioMascotasEncontradas repo;
+    private final ServicioEmail servicioEmail;
 
     public void agregar(MascotaEncontrada mascotaEncontrada) {
         this.repo.save(mascotaEncontrada);

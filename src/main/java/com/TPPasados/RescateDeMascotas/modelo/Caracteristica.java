@@ -1,16 +1,25 @@
 package com.TPPasados.RescateDeMascotas.modelo;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Data
 @AllArgsConstructor
+@Entity
+@Table(name = "caracteristicas")
 public class Caracteristica {
-    @Getter
-    @Setter
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nombre;
-    @Getter
     private List<String> opciones;
+
+    public Caracteristica(String nombre,
+                          List<String> opciones) {
+        this.nombre = nombre;
+        this.opciones = opciones;
+    }
 }

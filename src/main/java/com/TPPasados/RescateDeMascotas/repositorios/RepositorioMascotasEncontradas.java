@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface RepositorioMascotasEncontradas extends JpaRepository<MascotaEncontrada, Long> {
-
     List<MascotaEncontrada> findByFechaEncontradaBetween(LocalDate desde, LocalDate hasta);
 }

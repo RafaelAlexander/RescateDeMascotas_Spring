@@ -1,36 +1,46 @@
 package com.TPPasados.RescateDeMascotas.modelo;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Data
 @AllArgsConstructor
+@Entity
+@Table(name = "mascotas")
 public class Mascota {
-    @Getter
-    @Setter
     private String Chapita;
-    @Getter
+    @Enumerated
     private TipoMascota tipoMascota;
-    @Getter
     private String nombre;
-    @Getter
-    @Setter
     private String apodo;
-    @Getter
-    @Setter
     private double edadAprox;
-    @Getter
     private Sexo sexo;
-    @Getter
-    @Setter
     private String descFisica;
-    @Getter
-    @Setter
     private String fotos;
-    @Getter
+    @OneToMany
+    @JoinColumn(name = "mascota_id")
     private List<CaracteristicaPersonalizada> caracteristicaPersonalizada;
+
+    public Mascota(TipoMascota tipoMascota,
+                   String nombre,
+                   String apodo,
+                   double edadAprox,
+                   Sexo sexo,
+                   String descFisica,
+                   String fotos,
+                   List<CaracteristicaPersonalizada> caracteristicaPersonalizada) {
+        this.tipoMascota = tipoMascota;
+        this.nombre = nombre;
+        this.apodo = apodo;
+        this.edadAprox = edadAprox;
+        this.sexo = sexo;
+        this.descFisica = descFisica;
+        this.fotos = fotos;
+        this.caracteristicaPersonalizada = caracteristicaPersonalizada;
+    }
 
     public void agregarCaracteristicaPersonalizada(CaracteristicaPersonalizada caracteristicaPersonalizada) {
         this.caracteristicaPersonalizada.add(caracteristicaPersonalizada);
