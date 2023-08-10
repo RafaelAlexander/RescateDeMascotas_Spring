@@ -23,7 +23,7 @@ public class ServicioMascotasEncontradasTest {
                 1.0,
                 1.0,
                 LocalDate.now());
-        repo.agregar(mascotaEncontrada);
+        repo.agregar(mascotaEncontrada, null);
         Boolean hayMascota = repo.encontradas10Dias().size() == 1;
         Assert.isTrue(hayMascota, "No hay mascota");
     }
@@ -36,8 +36,10 @@ public class ServicioMascotasEncontradasTest {
                 1.0,
                 1.0,
                 LocalDate.now().minusDays(20));
-        repo.agregar(mascotaEncontrada);
-        Boolean noHayMascota = repo.encontradas10Dias().size() == 0;
+        this.repo.agregar(mascotaEncontrada, null);
+        int tamanio = repo.encontradas10Dias().size();
+        System.out.println(tamanio);
+        Boolean noHayMascota = tamanio == 0;
         Assert.isTrue(noHayMascota, "No hay mascota");
     }
 }

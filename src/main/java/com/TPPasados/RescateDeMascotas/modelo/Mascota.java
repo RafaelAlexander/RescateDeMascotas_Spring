@@ -11,7 +11,10 @@ import java.util.List;
 @Entity
 @Table(name = "mascotas")
 public class Mascota {
-    private String Chapita;
+    @Id
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    private Long Id;
+    private String chapita;
     @Enumerated
     private TipoMascota tipoMascota;
     private String nombre;

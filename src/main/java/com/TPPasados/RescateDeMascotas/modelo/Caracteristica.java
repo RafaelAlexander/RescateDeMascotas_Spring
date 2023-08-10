@@ -15,6 +15,7 @@ public class Caracteristica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+    @ElementCollection
     private List<String> opciones;
 
     public Caracteristica(String nombre,

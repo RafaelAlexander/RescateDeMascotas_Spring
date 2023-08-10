@@ -39,4 +39,12 @@ public class Duenio {
         this.contactos = contactos;
         this.mascotas = mascotas;
     }
+
+    public String getEmail() {
+        return this.contactos
+                .stream()
+                .map(Contacto::getEmail)
+                .findFirst()
+                .orElse(null);
+    }
 }

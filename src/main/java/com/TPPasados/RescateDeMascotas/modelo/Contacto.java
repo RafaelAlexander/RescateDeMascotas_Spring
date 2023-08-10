@@ -27,4 +27,11 @@ public class Contacto {
         this.telefono = telefono;
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        String telefono = this.telefono.isBlank() ? "" : " Telefono: " + this.telefono;
+        String email = this.email.isBlank() ? "" : " Email: " + this.email;
+        return "||Nombre: " + this.nombre + " Apellido: " + this.apellido + telefono + email + "||";
+    }
 }
