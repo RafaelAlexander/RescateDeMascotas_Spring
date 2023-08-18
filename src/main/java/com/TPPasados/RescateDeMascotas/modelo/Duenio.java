@@ -25,19 +25,27 @@ public class Duenio {
     @OneToMany
     @JoinColumn(name = "duenio_id")
     private List<Mascota> mascotas;
+    @ElementCollection
+    private List<MedioPreferido> medioPreferidos;
 
     public Duenio(String nombre,
                   String apellido,
                   TipoDocumento tipoDocumento,
                   String nroDocumento,
                   List<Contacto> contactos,
-                  List<Mascota> mascotas) {
+                  List<Mascota> mascotas,
+                  List<MedioPreferido> medioPreferidos) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDocumento = tipoDocumento;
         this.nroDocumento = nroDocumento;
         this.contactos = contactos;
         this.mascotas = mascotas;
+        this.medioPreferidos = medioPreferidos;
+    }
+
+    public boolean tieneComoPreferido(MedioPreferido medioPreferido) {
+        return this.medioPreferidos.contains(medioPreferido);
     }
 
     public String getEmail() {

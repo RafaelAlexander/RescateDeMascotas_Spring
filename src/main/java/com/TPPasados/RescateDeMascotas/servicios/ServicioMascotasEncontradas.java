@@ -2,6 +2,7 @@ package com.TPPasados.RescateDeMascotas.servicios;
 
 import com.TPPasados.RescateDeMascotas.modelo.Duenio;
 import com.TPPasados.RescateDeMascotas.modelo.MascotaEncontrada;
+import com.TPPasados.RescateDeMascotas.modelo.MedioPreferido;
 import com.TPPasados.RescateDeMascotas.modelo.Rescatista;
 import com.TPPasados.RescateDeMascotas.repositorios.RepositorioDuenio;
 import com.TPPasados.RescateDeMascotas.repositorios.RepositorioMascotasEncontradas;
@@ -27,10 +28,12 @@ public class ServicioMascotasEncontradas {
 
         if (duenios.size() > 0) {
             Duenio duenio = duenios.get(0);
-            String email = duenio.getEmail();
-            String msg = "Se encontro a su mascota perdida." +
-                    "Los contactos del rescatista son " + rescatista.toString();
-            this.servicioEmail.envioMensaje(msg, "Se encontro a su mascota perdida", email);
+            if (duenio.tieneComoPreferido(MedioPreferido.EMAIL)) {
+                String email = duenio.getEmail();
+                String msg = "Se encontro a su mascota perdida." +
+                        "Los contactos del rescatista son " + rescatista.toString();
+                this.servicioEmail.envioMensaje(msg, "Se encontro a su mascota perdida", email);
+            }
         }
     }
 
